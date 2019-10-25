@@ -1,0 +1,126 @@
+:root {
+  --main-color: #1e88e5;
+  --accent-color: #005cb2;
+  --contrast-color: #e5671e;
+  font-size: 18px;
+}
+
+*, *:before, *:after {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+a:hover{
+  transition-delay: 100ms;
+  transition-duration: 200ms;
+  color: var(--contrast-color);
+}
+.text-bright{
+    color: #ddd;
+}
+.source a{
+  color: hsla(0, 0%, 0%, 40%);
+  font-size: 16px;
+}
+
+.under-nav{
+  width: 100%;
+  border: none;
+  border-top: 5px solid var(--main-color); 
+  margin: 0;
+}
+
+.separator{
+  height: 2px;
+  width: 90%;
+  margin-bottom: 30px;
+  border: 0;
+  background-image: linear-gradient(to right, white, hsl(0, 0%, 50%), white);
+  clear: both;
+}
+
+.main-header{
+  width: 100%;
+  background-color: black;
+  margin-bottom:5px;
+  height:67.25px;
+}
+
+.navbar-brand:hover{ /* po najechaniu myszą na blog */
+  transition-delay: 100ms;
+  transition-duration: 600ms;
+  color: var(--contrast-color);
+}
+
+.first{ /* pierwsza część indexu */ 
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  height: 700px;
+}
+#index-first-background{
+  height:  100%;
+  background-image: url("/media/background.jpg");
+  z-index:  -1;
+  position:  absolute;
+  width:  100%;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center bottom;
+}
+.index-title{
+  text-align: center;
+  font-size: 80px;
+  padding-top: 175px;
+  color: hsl(0, 0%, 20%);
+}
+.index-subtitle{
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 50px;
+  color: hsl(0, 0%, 30%);
+}
+
+.index-button{
+  background-color: var(--main-color);
+  color: #222;
+  font-weight: 900;
+  display: block;
+  box-shadow: 5px 5px 10px 1px hsla(0, 0%, 0%, 20%);
+  max-width: 170px;
+  width: auto;
+}
+
+.index-button:hover{
+  transition-delay: 100ms;
+  transition-duration: 200ms;
+  color: var(--contrast-color);
+}
+
+.index-description{
+  padding: 30px;
+}
+
+.index-description-p{
+  padding: 20px;
+  color: hsl(0, 0%, 30%);
+}
+
+.slashline:before{
+    content: '________';
+    position: absolute;
+    margin-top: 4px;
+}
+#user_price:after{
+    content: ' zł/kWh';
+}
+
+
+footer{
+  background-color: var(--main-color);
+}
+.footer-copyright{
+    background-color: var(--accent-color);
+    color: #ccc;
+}
+

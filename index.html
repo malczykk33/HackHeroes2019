@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kalulator oszczędności | Sun NRG Calc</title>
+	<meta name="description" content="Sun NRG Calc umożliwia policzenie oszczędności związanych z zamontowaniem paneli słonecznych" />
+    <link rel="icon" href="/media/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    
+    <!--[if lt IE 9]>
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="main-header fixed-top">
+        <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand ml-auto font-weight-bold" href="/">strona główna</a>
+            <a class="navbar-brand mr-auto font-weight-bold" href="/calculator/">kalkulator</a>
+        </nav>
+        <hr class="under-nav" />
+    </header>
+    
+    <div class="index-section first">
+        <div id="index-first-background"></div>
+        <h1 class="index-title">SUN NRG CALC</h1>
+        <p class="index-subtitle">czyli ile możesz zaoszczędzić dzięki energii słonecznej </p>
+        <a href="/calculator/" class="btn index-button index-button">sprawdź sam</a>
+    </div>
+        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <figure class="figure">
+                    <img class="figure-img img-fluid" src="/media/photo1.jpg">
+                    <figcaption class="figure-caption">
+                        <p class="text-muted small"><a class="text-muted small" href="https://www.freepik.com/free-photos-vectors/pattern">Money vector created by rawpixel.com - www.freepik.com</a></p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-5 index-description">
+                <h1>Dlaczego fotowoltaika?</h1>
+                <p class="text-justify">W obecnych czasach prąd osiąga najwyższe od wielu lat ceny. Według niektórych źródeł mogą one wzrosnąć o 30, a nawet 50%!<sup><a href="https://enerad.pl/aktualnosci/ceny-pradu-2020/" target="_blank">[1]</a></sup></p>
+                <p class="text-justify">Montaż paneli fotowoltaicznych może znacznie obniżyć rachunek za prąd, a nawet stanowić pasywne źródło przychodu. Koszt przydomowej instalacji, 
+                zależnie od zużycia energii, wynosi od około 16 do nawet prawie 50 tysięcy złotych. Koszt ten jednak można znacznie obniżyć - obecnie aktywny rządowy program "Mój prąd"
+                pozwala zredukować koszta nawet o 5 tysięcy złotych! Więcej informacji można znaleźć <a href="https://www.gov.pl/web/gov/skorzystaj-z-programu-moj-prad" target="_blank">tutaj.</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 index-description">
+                <h1>Jak to działa?</h1>
+                <p>Użytkownik sieci elektrycznej po zamontowaniu instalacji może korzystać z wyprodukowanej energii, a <b>nadwyżki przesyłać do zakładu energetycznego</b>.
+                W przypadku niedoboru energii, czyli wtedy, gdy instalacja osiąga niewystarczającą moc (czyli gdy słońce "słabiej świeci") przesłane wcześniej nadwyżki możemy pobrać z zakładu. W przypadku instalacji o mocy do 10 kWp 
+                w ramach opłaty pobierze zakład pobierze <b>20% z przesłanej energii</b>, a w przypadkach mocy powyżej 10 kWp - 30%.</p>
+                <p>W praktyce jednak te drugie instalacje zdarzają się rzadko - produkują one ponad 10.000 kWh energii rocznie. Średnie miesięczne zapotrzebowanie dla rodziny 4-osobowej wynosi natomiast od <b>4000 do 6000 kWh</b> - nie musimy się więc martwić. :)</p>
+            </div>
+            <div class="col-md-5">
+                <figure class="figure">
+                    <img class="figure-img img-fluid" src="/media/photo2.jpg">
+                    <figcaption class="figure-caption">
+                        <p class="text-muted small"><a href="https://www.freepik.com/free-photos-vectors/pattern">Money vector created by rawpixel.com - www.freepik.com</a></p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <figure class="figure">
+                    <img class="figure-img img-fluid" src="/media/photo3.jpg">
+                    <figcaption class="figure-caption">
+                        <p class="text-muted small"><a class="text-muted small" href="https://www.freepik.com/free-photos-vectors/pattern">Money vector created by rawpixel.com - www.freepik.com</a></p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-5 index-description">
+                <h1>Ile mogę zaoszczędzić?</h1>
+                <p class="text-justify">1 kWp mocy instalacji wyprodukuje około 1000 kWh energii w czasie roku. Jej ilość zależy oczywiście od lokalizacji i nachylenia dachu, ale w tym przykładzie przyjmujemy uśrednioną wartość.
+                    Oznacza to tyle, że zakładając moc instalacji np. 5 kWp, w ciągu roku wyprodukuje ona około 5000 kWh energii. 30% z niej zużyjemy na bieżąco - pozostałe 70% przesyłamy do zakładu energetycznego,
+                    z tego zostanie natomiast pobrane 20% opłaty. Czyli rzeczywista "strata" energii wyniesie 16%.</p>
+                <p class="text-justify">Koszt takiej inwestycji wyniesie około <b>24 tysiące złotych.</b></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Dużo?</h1>
+                <p class="text-justify">Tylko z pozoru. W ramach wspomnianego wyżej <a href="https://www.gov.pl/web/gov/skorzystaj-z-programu-moj-prad" target="_blank">programu</a> możemy zmniejszyć ten koszt o 5000 zł. Wtedy zapłacimy 19 tys. zł.</p>
+                <p class="text-justify">Roczny koszt energii bez fotowoltaiki, przy założeniu średniej ceny dla Polski (0,55 zł/kWh), wynieise 5000*0,55 = <b>2750 złotych.</b> Oznacza to, że nasza inwestycja <b>zwróci się po niecałych 7 latach</b>, 
+                a później będzie już na siebie zarabiać, przynosząc nam roczne oszczędności - 2750 zł rocznie. Po 18 latach od założenia zaoszczędzimy ponad <b>30 tysięcy złotych!</b></p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">
+                    Nie zwlekaj - <a href="/calculator/">kliknij tutaj</a> i sprawdź korzyści!
+                </h1>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="page-footer font-small pt-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <h6 class="text-uppercase text-bright">Informacje o projekcie:</h6>
+                <p class="text-bright text-justify small">SUN NRG CALC to prosty kalkulator służący do obliczania kosztu oraz oszczędności związanych z zainstalowaniem paneli fotowoltaicznych w gospodarstwie domowym.</p>
+                <p class="text-bright text-justify small">Został przeze mnie napisany od podstaw jako praca na konkurs HackHeroes. Ma na celu uświadomienie ludziom, że dostęp do czystej energii elektrycznej jest w zasięgu ich rąk.</p>
+                <p class="text-bright text-justify small">Tworząc kalkulator starałem się dbać w pełni o poprawność merytoryczną obliczeń - przejrzałem w tym celu dziesiątki stron internetowych i aktów prawnych.</p>
+                <p class="text-bright text-justify small">Aplikacja jest jeszcze w fazie rozwoju - z powodu limitu czasu nie byłem w stanie wziąć pod uwagę takich czynników jak choćby lokalizacja planowanej instalacji, które to mogą nieznacznie wpłynąć na wyniki obliczeń.</p>
+            </div>
+            <div class="col-lg-3">
+                <h6 class="text-uppercase text-bright">Użyte technologie:</h6>
+                <ul class="list-unstyled text-bright">
+                    <li class="small">HTML</li>
+                    <li class="small">CSS</li>
+                    <li class="small">JavaScript</li>
+                    <li class="small">jQuery</li>
+                    <li class="small">Bootstrap</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">Strona w całości stworzona przez
+            <a href="https://github.com/malczykk33" target="_blank">Kacper Malczyk</a>
+      </div>
+    </footer>
+</body>
+</html>
