@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//WSC//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+    <title>Kalulator oszczędności | Sun NRG Calc</title>
+	<meta name="description" content="Kalulator | Sun NRG Calc" />
+    <link rel="icon" href="/media/favicon.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/scripts/calculator.js"></script>
+    <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+    </script>
+    <!--[if lt IE 9]>
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body style="background-image: url('/media/background.jpg'); background-position:cover">
+    <header class="main-header fixed-top">
+        <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand ml-auto font-weight-bold" href="/">strona główna</a>
+            <a class="navbar-brand mr-auto font-weight-bold" href="/calculator/">kalkulator</a>
+        </nav>
+        <hr class="under-nav" />
+    </header>
+    <div class="container" style="background-color: white;margin-top:67.25px;min-height:800px;">
+        <div class="row pt-4">
+            <div class="col">
+                <h1>Kalkulator oszczędności</h1>
+                <h3>wynikających z korzystania z energii elektrycznej pochodzącej z paneli fotowoltaicznych</h3>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col">
+                <h5>Instrukcja obsługi kalkulatora:</h5>
+                <p>Przeciągnij pierwszy suwak na żądaną wartość aby wybrać wartość swojego miesięcznego rachunku za energię elektryczną.</p>
+                <p>Drugi suwak - ilość zużywanej miesięcznie energii - zostanie przeciągnięty automatycznie - jego wartość zostanie ustawiona na podstawie średniej krajowej opłaty za 1 kWh.</p>
+                <p>Jeśli znasz swoje zużycie prądu -  przeciągnij drugi suwak na żądaną wartość.</p>
+                <p>Wciśnij przycisk "Oblicz". Zobaczysz wtedy wyniki obliczeń!</p>
+            </div>
+        </div>
+        
+        <form id="consumption_form" class="needs-validation" action="" novalidate>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="monthly_bill">Miesięczna opłata za energię elektryczną:</label>
+                        <button type="button" class="btn btn-default btn-sm">
+                        	<a class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></a>
+                        </button>
+                        <input type="range" class="custom-range" id="monthly_bill" name="monthly_bill" min="10" max="800" step="1" required>
+                        <output for="monthly_bill" id="monthly_bill_output" class="output justify-content-center">0 zł</output>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="monthly_consumption">Miesięczne zużycie prądu w kWh:</label>
+                        <input type="range" class="custom-range" id="monthly_consumption" name="monthly_consumption" min="10" max="1500" step="10" required>
+                        <output for="monthly_consumption" id="monthly_consumption_output" class="output justify-content-center">0 kWh</output>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col">
+                    <p>Cena energii elektrycznej [zł/kWh]:<p>
+                    <p id="user_price">0.55</p>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" id="consumption_calculate">Oblicz!</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <div id="results" style="display: none;">
+            <div class="row">
+                <div class="col">
+                    <p>Twoje roczne zużycie prądu wynosi:</p>
+                </div>
+                <div class="col">
+                    <p id="yearly_consumption"></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Zalecana moc instalacji:</p>
+                </div>
+                <div class="col">
+                    <p id="indicated_installation_power"></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div id="donation_info_div">
+                        <p> Koszt instalacji bez dotacji:</p>
+                        <p id="donation_info">Dotacja z programu "Mój prąd":</p>
+                    </div>
+                    <p>Koszt instalacji:</p>
+                </div>
+                <div class="col">
+                    <div id="donation_div">
+                        <p id="cost"></p>
+                        <p id="donation" class="slashline" data-toggle="tooltip" data-placement="right" title="Dotacja wynosi 50% wartości instalacji, ale nie więcej niż 5000 zł"></p>
+                    </div>
+                    <p id="cost_with_donation"></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Inwestycja zwróci się po:</p>
+                </div>
+                <div class="col">
+                    <p id="return_time"></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Oszczędność roczna:</p>
+                </div>
+                <div class="col">
+                    <p id="savings"></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Powierzchnia instalacji:</p>
+                </div>
+                <div class="col">
+                    <p id="surface"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small pt-4 container">
+        <div class="row container">
+            <div class="col-lg-8">
+                <h6 class="text-uppercase text-bright">Informacje o projekcie:</h6>
+                <p class="text-bright small">SUN NRG CALC to prosty kalkulator służący do obliczania kosztu oraz oszczędności związanych z zainstalowaniem paneli fotowoltaicznych w gospodarstwie domowym.</p>
+                <p class="text-bright small">Został przeze mnie napisany od podstaw jako praca na konkurs HackHeroes. Ma na celu uświadomienie ludziom, że dostęp do czystej energii elektrycznej jest w zasięgu ich rąk.</p>
+                <p class="text-bright small">Tworząc kalkulator starałem się dbać w pełni o poprawność merytoryczną obliczeń - przejrzałem w tym celu dziesiątki stron internetowych i aktów prawnych.</p>
+                <p class="text-bright small">Aplikacja jest jeszcze w fazie rozwoju - z powodu limitu czasu nie byłem w stanie wziąć pod uwagę takich czynników jak choćby lokalizacja planowanej instalacji, które to mogą nieznacznie wpłynąć na wyniki obliczeń.</p>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="text-uppercase text-bright">Użyte technologie:</h6>
+                <ul class="list-unstyled text-bright">
+                    <li class="small">HTML</li>
+                    <li class="small">CSS</li>
+                    <li class="small">JavaScript</li>
+                    <li class="small">jQuery</li>
+                    <li class="small">Bootstrap</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row container-fluid footer-copyright text-center py-3">
+            <p>Strona w całości stworzona przez <a href="https://github.com/malczykk33" target="_blank">Kacper Malczyk</a></p>
+        </div>
+    </footer>
+<script>
+$("#monthly_bill").on("input", function() {
+    var user_price = parseFloat($("#user_price").text());
+    $("#monthly_bill_output").val(this.value + ' zł');
+    $("#monthly_consumption").val(parseInt(this.value/user_price));
+    $("#monthly_consumption_output").val($("#monthly_consumption").val() + "kWh");
+}).trigger("change");
+
+$("#monthly_consumption").on("input", function(){
+    var monthly_consumption = $("#monthly_consumption").val();
+    var monthly_bill        = $("#monthly_bill").val();
+    var user_price          = monthly_bill/monthly_consumption;
+
+    $("#monthly_consumption_output").val(this.value + ' kWh');
+    $('#user_price').text(user_price.toFixed(2));
+}).trigger("change");
+
+</script>
+<script>    
+// script source: https://getbootstrap.com/docs/4.3/components/forms/#custom-forms
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('click', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>
+</body>
+</html>
